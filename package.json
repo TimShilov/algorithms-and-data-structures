@@ -1,0 +1,39 @@
+{
+  "name": "algorithms-and-data-structures",
+  "version": "1.0.0",
+  "description": "algorithms-and-data-structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimShilov/algorithms-and-data-structures.git"
+  },
+  "keywords": [
+    "algorithms",
+    "datastructures"
+  ],
+  "author": "Tim Shilov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimShilov/algorithms-and-data-structures/issues"
+  },
+  "homepage": "https://github.com/TimShilov/algorithms-and-data-structures#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
