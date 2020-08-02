@@ -4,7 +4,9 @@
   "description": "algorithms-and-data-structures",
   "main": "index.js",
   "scripts": {
-    "test": "jest test",
+    "test": "jest __tests__",
+    "test:coverage": "jest __tests__ --coverage",
+    "test:watch": "jest __tests__ --watch",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -27,6 +29,10 @@
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-optimize-regex": "^1.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.5.0",
     "eslint-plugin-unicorn": "^21.0.0",
     "husky": "^4.2.5",
     "jest": "^26.2.2",
@@ -46,9 +52,18 @@
     }
   },
   "lint-staged": {
-    "**/*.{js|json|ts}": [
+    "**/*.{js|jsx|json|ts}": [
       "eslint --fix",
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/*.{js,jsx}"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
     ]
   }
 }
