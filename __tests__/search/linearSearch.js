@@ -1,4 +1,4 @@
-const linearSearch = require("../src/linearSearch");
+const linearSearch = require("../../src/search/linearSearch");
 
 describe("Linear Search", () => {
     it("should find index in sorted array of numbers or return -1", () => {
