@@ -5,7 +5,7 @@ describe("Selection Sort", () => {
         expect(selectionSort([])).toStrictEqual([]);
         expect(selectionSort([1])).toStrictEqual([1]);
         expect(selectionSort([0, 1, 2])).toStrictEqual([0, 1, 2]);
-        expect(selectionSort([3, 2, 1])).toStrictEqual([1, 2, 3]);
+        expect(selectionSort([3, 2, 2, 1])).toStrictEqual([1, 2, 2, 3]);
         expect(selectionSort([5, 4, 9])).toStrictEqual([4, 5, 9]);
     });
 
@@ -13,7 +13,7 @@ describe("Selection Sort", () => {
         expect(selectionSort([])).toStrictEqual([]);
         expect(selectionSort(["a"])).toStrictEqual(["a"]);
         expect(selectionSort(["a", "b", "c"])).toStrictEqual(["a", "b", "c"]);
-        expect(selectionSort(["c", "b", "a"])).toStrictEqual(["a", "b", "c"]);
+        expect(selectionSort(["c", "c", "a"])).toStrictEqual(["a", "c", "c"]);
         expect(selectionSort(["z", "x", "y"])).toStrictEqual(["x", "y", "z"]);
     });
 
