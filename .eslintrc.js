@@ -16,6 +16,13 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 11,
     },
-    plugins: ["unicorn", "optimize-regex", "promise", "sonarjs"],
+    plugins: [
+        "unicorn",
+        "optimize-regex",
+        "promise",
+        "sonarjs",
+        "jest",
+        "jest-formatting",
+    ],
     rules: {},
 };

@@ -1,21 +1,24 @@
-function binarySearch(array = [], searchValue) {
-    let low = 0;
-    let high = array.length - 1;
+function binarySearch(sortedArray = [], seekValue, extractionCallback) {
+    let lowIndex = 0;
+    let highIndex = sortedArray.length - 1;
 
-    while (low < high) {
-        const mid = Math.floor((low + high) / 2);
+    while (lowIndex <= highIndex) {
+        const middleIndex = lowIndex + Math.floor((highIndex - lowIndex) / 2);
 
-        const guess = array[mid];
-        if (guess === searchValue) {
-            return mid;
+        const guessValue = extractionCallback
+            ? extractionCallback(sortedArray[middleIndex])
+            : sortedArray[middleIndex];
+
+        if (guessValue === seekValue) {
+            return middleIndex;
         }
-        if (guess > searchValue) {
-            high = high - low - 1;
+        if (guessValue > seekValue) {
+            highIndex = middleIndex - 1;
         } else {
-            low = high - mid + 1;
+            lowIndex = middleIndex + 1;
         }
     }
-    return null;
+    return -1;
 }
 
 module.exports = binarySearch;
